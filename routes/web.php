@@ -19,3 +19,6 @@ Route::get('/', function () {
 Route::get('/hello-world', function () {
     return ('HELLO WORLD!!');
 });
+Route::get('/hello-world/{nome}', function ($nome) {
+    return ('HELLO'.$nome.'!!');
+});
