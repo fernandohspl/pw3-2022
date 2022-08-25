@@ -16,9 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('/hello-world', function () {
     return ('HELLO WORLD!!');
 });
-Route::get('/hello-world/{nome}', function ($nome) {
-    return ('HELLO'.$nome.'!!');
-});
+
+Route::get('/hello-world/{nome}', [\App\Http\Controllers\TesteController::class,'mostrarNome']);
+
+Route::get('/soma/{n1}/{n2}', [\App\Http\Controllers\TesteController::class,'soma']);
+
