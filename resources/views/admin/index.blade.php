@@ -20,7 +20,8 @@
                     <tr>
                         <td>{{$categoria->nome}}</td>
                         <td>
-                            <form action="{{route('categorias.destroy', $categoria)}}" method="post">
+                            <a heref="{{route('categorias.edit',$categoria)}}"class="btn btn-primary"Editar</a>
+                            <form action="{{route('categorias.destroy', $categoria)}}" method="post"> class"form-delete">
                                 @method('DELETE')
                                 @csrf
                                 <button class="btn btn-danger" type="submit">Excluir</button>
