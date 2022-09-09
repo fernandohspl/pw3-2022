@@ -74,6 +74,9 @@
 
     <!-- Custom styles for this template -->
     <link href="{{asset('css/dashboard.css')}}" rel="stylesheet">
+    <link href="{{asset('style/dashboard.css')}}" rel="stylesheet">
+
+
 </head>
 <body>
 
