@@ -3,7 +3,7 @@
 @section('conteudo')
     <div class="container">
         <div class="row">
-            <form action="{{route('categorias.update',$categoria)}}" method="post">
+            <form action="{{route('categorias.update', $categoria)}}" method="post">
                 @method('PUT')
                 @csrf
                 <div class="form-group">

@@ -12,13 +12,7 @@ class CategoriaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Categoria $categoria)
-    {
-        //
-        $categorias = Categoria::all();
-        return view('admin.categorias.edit', compact('categoria'));
-    }
-    public function edit()
+    public function index()
     {
         //
         $categorias = Categoria::all();
@@ -39,12 +33,11 @@ class CategoriaController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
         Categoria::create($request->all());
         return redirect()->route('categorias.index');
     }
@@ -52,43 +45,43 @@ class CategoriaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\Models\Categoria $categoria
+     * @param  \App\Models\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
     public function show(Categoria $categoria)
     {
-        //
+        return abort(404, 'Pagina nao encontrada');
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\Models\Categoria $categoria
+     * @param  \App\Models\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
     public function edit(Categoria $categoria)
     {
-        //
+        return view('admin.categorias.edit', compact('categoria'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Models\Categoria $categoria
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Categoria $categoria)
     {
-        $params =$request->all();
+        $params = $request->all();
         $categoria->update($params);
-        return redirect()->route('categorias');
+        return redirect()->route('categorias.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Models\Categoria $categoria
+     * @param  \App\Models\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
     public function destroy(Categoria $categoria)
