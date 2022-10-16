@@ -1,24 +1,16 @@
-.table-column-70{
-    width: 70%;
-}
-
-.table-column-50{
-    width: 50%;
-}
-
-.form-delete{
-    margin-left: 2px;
-    display: inline-block;
-}
-
+ .table-column-70{
+     width: 70;
+ }
+ .form-delete{
+     margin-left: 2px;
+     display: inline-block;
+ }
 .btn{
-    width: auto;
+    width:auto;
 }
-
 .container{
     padding: 5px;
 }
-
 .form-group{
     margin-top: 3px;
 }
